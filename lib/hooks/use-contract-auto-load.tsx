@@ -17,7 +17,7 @@ export function useContractAutoLoad(contract: string, chainId?: number): any {
       switch (contract) {
         case 'SnapFactory':
           return {
-            address: '',
+            address: '0xd993bCcd68785ae7a03db04E8c1344511d14695d',
             abi: [],
           }
         default:

@@ -102,7 +102,7 @@ export default function CreateForm() {
       symbol: data.symbol,
       contractURI: contractURI,
       tokenImageURL: contractURI.image,
-      snapImageURL: contractURI.image,
+      snapImageURL: 'ipfs://QmfPZE2KaJY5vUzCPCF4xiokq5UX1W7td4fRGRPXhGN8Zh',
       mintFee: ethers.utils.parseEther('0.0000092'),
       mintFeeRecipient: process.env.NEXT_PUBLIC_MINT_FEE_ADDRESS as `0x${string}`,
       creator: account.address as `0x${string}`,
