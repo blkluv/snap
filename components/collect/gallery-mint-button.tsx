@@ -25,6 +25,7 @@ export const GalleryMintButton = ({ className, label = 'Collect', snap }: Galler
     address: snap,
   })
 
+  // @ts-ignore
   const { write, data, status, error } = useMintableErc721SnapMint({
     address: snap,
     args: [address],
@@ -38,8 +39,10 @@ export const GalleryMintButton = ({ className, label = 'Collect', snap }: Galler
   })
 
   if (!isLoading && isFetched && isSuccess) {
+    // @ts-ignore
     toast({ id: 'MINT_TOAST', title: 'COLLECTED SUCCESSFULLY 🎉', description: <p>Congrats! You collected this Snap</p> }, 'MINT_TOAST')
   } else if (!isLoading && isFetched && isError) {
+    // @ts-ignore
     toast({ id: 'ERROR_TOAST', title: 'Error Collecting' }, 'ERROR_TOAST')
   }
   // useAddMintedToken(data?.hash as string)
@@ -47,10 +50,13 @@ export const GalleryMintButton = ({ className, label = 'Collect', snap }: Galler
   const classes = classNames(className, 'PixelStoreMintButton', 'btn mb-2')
   return (
     <>
+      {/* @ts-ignore */}
       <button disabled={!write || isLoading} onClick={write} className={classes}>
         {status == 'loading' ? 'Collecting..' : label}
       </button>
+      {/* @ts-ignore */}
       {status === 'error' && error?.code == 4001 && <div className="text-center text-red-500">{error?.message}</div>}
+      {/* @ts-ignore */}
       {status === 'error' && error?.code != 4001 && <div className="text-center text-red-500">Insufficient Balance</div>}
     </>
   )

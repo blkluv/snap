@@ -9,10 +9,12 @@ export default defineConfig({
   contracts: [
     {
       name: 'MintableERC721Snap',
+      // @ts-ignore
       abi: MintableERC721SnapABI,
     },
     {
       name: 'SnapFactory',
+      // @ts-ignore
       abi: SnapFactoryABI,
     },
   ],

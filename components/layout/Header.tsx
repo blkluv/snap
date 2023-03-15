@@ -7,10 +7,7 @@ import { WalletConnect } from '@/components/blockchain/wallet-connect'
 import { siteConfig } from '@/config/site'
 import useScroll from '@/lib/hooks/use-scroll'
 
-import { NavigationMenuGeneral } from './navigation-menu-general'
-import UserDropdown from './user-dropdown'
 import { BranchColorMode } from '../shared/branch-color-mode'
-import { BranchIsWalletConnected } from '../shared/branch-is-wallet-connected'
 import { LinkComponent } from '../shared/link-component'
 import { ResponsiveMobileAndDesktop } from '../shared/responsive-mobile-and-desktop'
 import { ThemeToggle } from '../shared/theme-toggle'
@@ -48,10 +45,6 @@ export function Header(props: Props) {
           <h1 className="text-gradient-sand ml-2 text-2xl font-bold">{siteConfig.name}</h1>
         </LinkComponent>
       </ResponsiveMobileAndDesktop>
-      {/* <div className="flex-center flex-1 px-10">
-        <NavigationMenuGeneral />
-      </div> */}
-
       <div className="-mr-2 flex grow justify-end gap-4">
         <WalletConnect />
         <LinkComponent className="flex items-center" href="/create">

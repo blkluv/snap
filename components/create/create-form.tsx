@@ -7,7 +7,7 @@ import { create } from 'ipfs-http-client'
 import { useForm } from 'react-hook-form'
 import { useAccount, useWaitForTransaction } from 'wagmi'
 
-import { useSnapFactoryCreateSnap, useSnapFactoryGetActiveSnaps } from '@/lib/blockchain'
+import { useSnapFactoryCreateSnap } from '@/lib/blockchain'
 import { useContractAutoLoad } from '@/lib/hooks/use-contract-auto-load'
 import { toast } from '@/lib/hooks/use-toast'
 import { GATEWAY_BASE } from '@/lib/ipfs'
@@ -43,6 +43,7 @@ export default function CreateForm() {
 
   const contractFactory = useContractAutoLoad('SnapFactory')
 
+  // @ts-ignore
   const { write, data, status, error } = useSnapFactoryCreateSnap({
     address: contractFactory?.address,
     args: [
@@ -64,8 +65,10 @@ export default function CreateForm() {
   })
 
   if (!isLoading && isFetched && isSuccess) {
+    // @ts-ignore
     toast({ id: 'CREATE_TOAST', title: 'CREATED SUCCESSFULLY 🎉', description: <p>Congrats! You made a Snap</p> }, 'CREATE_TOAST')
   } else if (!isLoading && isFetched && isError) {
+    // @ts-ignore
     toast({ id: 'CREATE_ERROR_TOAST', title: '⛔ Error Creating ⛔' }, 'ERROR_TOAST')
   }
 
@@ -118,12 +121,14 @@ export default function CreateForm() {
   const onImageUpload = async (e: any) => {
     const file = e.target.files[0]
     if (!file) {
+      // @ts-ignore
       toast({ id: 'ERROR_FILE', title: '⛔ Error With File ⛔' }, 'ERROR_FILE')
       return
     }
 
     const isLt10M = file.size / 1024 / 1024 < 10
     if (!isLt10M) {
+      // @ts-ignore
       toast({ id: 'ERROR_FILE_SIZE', title: '⛔ File Size Too Big ⛔', description: 'Must be less than 10MB' }, 'ERROR_FILE_SIZE')
       return
     }
@@ -133,6 +138,7 @@ export default function CreateForm() {
       setFileIpfsHash(added.path)
     } catch (error) {
       console.log('Error uploading file: ', error)
+      // @ts-ignore
       toast({ id: 'ERROR_FILE_IPFS', title: '⛔ Error with IPFS Upload ⛔', description: error?.message }, 'ERROR_FILE_IPFS')
     }
   }
