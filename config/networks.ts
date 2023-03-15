@@ -13,7 +13,7 @@ goerli.iconUrl = '/icons/NetworkEthereumTest.svg'
 sepolia.iconUrl = '/icons/NetworkEthereumTest.svg'
 
 export const ETH_CHAINS_TEST = [mainnet, goerli, sepolia, optimismGoerli, arbitrumGoerli, hardhat]
-export const ETH_CHAINS_PROD = [mainnet, optimism, arbitrum, polygon]
+export const ETH_CHAINS_PROD = [mainnet, optimism]
 
 export const CHAINS = process.env.NODE_ENV === 'production' ? ETH_CHAINS_PROD : ETH_CHAINS_TEST
 
