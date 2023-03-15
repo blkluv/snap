@@ -6,7 +6,6 @@ import { ModalProvider } from 'react-modal-hook'
 import { Provider as RWBProvider } from 'react-wrap-balancer'
 import { SWRConfig } from 'swr'
 
-import HandleWalletEvents from '@/components/blockchain/handle-wallet-events'
 import { RainbowKit } from '@/components/providers/rainbow-kit'
 import { useIsMounted } from '@/lib/hooks/use-is-mounted'
 import fetchJson from '@/lib/utils/fetch-json'
@@ -31,9 +30,7 @@ export default function RootProvider({ children }: RootProviderProps) {
           <QueryClientProvider client={queryClient}>
             <RWBProvider>
               <ModalProvider>
-                <RainbowKit>
-                  <HandleWalletEvents>{children}</HandleWalletEvents>
-                </RainbowKit>
+                <RainbowKit>{children}</RainbowKit>
               </ModalProvider>
             </RWBProvider>
           </QueryClientProvider>

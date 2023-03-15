@@ -35,9 +35,7 @@ if (process.env.NEXT_PUBLIC_INFURA_API_KEY) {
   )
 }
 
-if (process.env.NEXT_PUBLIC_PROVIDER_PUBLIC) {
-  PROVIDERS.push(publicProvider())
-}
+PROVIDERS.push(publicProvider())
 
 // @ts-ignore
 export const { chains, provider } = configureChains(CHAINS, PROVIDERS)

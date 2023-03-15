@@ -1,12 +1,12 @@
 import { siteConfig } from '@/config/site'
 
 export default function Head() {
-  const url = process.env.NEXTAUTH_URL || 'http://localhost:3000'
-  const ogUrl = new URL(`${url}/api/og`)
+  const url = 'https://nftsnaps.xyz' || 'http://localhost:3000'
+  const ogUrl = new URL(`${url}/preview.png`)
 
   return (
     <>
-      <title>{`${siteConfig.name} - ${siteConfig.description}`}</title>
+      <title>{siteConfig.title}</title>
       <meta charSet="utf-8" />
       <meta name="description" content={siteConfig.description} />
       <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
