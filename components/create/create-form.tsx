@@ -6,7 +6,7 @@ import { ethers } from 'ethers'
 import { create } from 'ipfs-http-client'
 import Image from 'next/image'
 import { useForm } from 'react-hook-form'
-import { useAccount, useWaitForTransaction } from 'wagmi'
+import { useAccount, useNetwork, useWaitForTransaction } from 'wagmi'
 
 import { useSnapFactoryCreateSnap } from '@/lib/blockchain'
 import { useContractAutoLoad } from '@/lib/hooks/use-contract-auto-load'
@@ -41,6 +41,7 @@ export default function CreateForm() {
   const [newSnapDetails, setNewSnapDetails] = useState<CreateMintableSnap>()
 
   const account = useAccount()
+  const { chain } = useNetwork()
 
   const contractFactory = useContractAutoLoad('SnapFactory')
 
@@ -142,6 +143,14 @@ export default function CreateForm() {
       // @ts-ignore
       toast({ id: 'ERROR_FILE_IPFS', title: '⛔ Error with IPFS Upload ⛔', description: error?.message }, 'ERROR_FILE_IPFS')
     }
+  }
+
+  if (chain?.id == 1) {
+    return (
+      <div className="min-w-full rounded-md bg-neutral-100 p-4 text-center dark:bg-neutral-800">
+        <h3 className="mb-2 text-3xl font-bold">Please connect to Optimism</h3>
+      </div>
+    )
   }
 
   return (
