@@ -32,3 +32,7 @@ https://twitter.com/john_c_palmer/status/1635303079880040450
 
 #### Made With
 ⚡ TurboETH Web3 App Template
+
+
+### Share Your Story
+https://www.nftsnaps.xyz/
