@@ -5,7 +5,7 @@ import { ethers } from 'ethers'
 import Image from 'next/image'
 import { useEnsName } from 'wagmi'
 
-import { useMintableErc721SnapGet } from '@/lib/blockchain'
+import { useMintableErc721SnapGet, useMintableErc721SnapTotalSupply } from '@/lib/blockchain'
 import { GATEWAY_BASE } from '@/lib/ipfs'
 
 import GalleryMintButton from './gallery-mint-button'
@@ -26,6 +26,10 @@ type SnapDetails = {
 
 export default function GalleryItem({ snap }: GalleryItemProps) {
   const { data: snapDetails } = useMintableErc721SnapGet({
+    address: snap,
+  })
+
+  const { data: totalSupply } = useMintableErc721SnapTotalSupply({
     address: snap,
   })
 
@@ -56,6 +60,8 @@ export default function GalleryItem({ snap }: GalleryItemProps) {
           </div>
 
           <GalleryMintButton className="btn-blue btn-pill bg-gradient-button btn-xl mt-5 w-full max-w-lg py-6 text-2xl" snap={snap} />
+
+          <div className="my-2">{totalSupply ? <p className="text-base font-medium">Collected: {totalSupply?.toString()}</p> : null}</div>
 
           <div className="mt-2">
             <span className="text-xs">
