@@ -36,3 +36,5 @@ https://twitter.com/john_c_palmer/status/1635303079880040450
 
 ### Share Your Story
 https://www.nftsnaps.xyz/
+
+<sub>Disclaimer: This was a quick hack, use at your own risk</sub>
