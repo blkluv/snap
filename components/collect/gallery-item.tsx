@@ -2,6 +2,7 @@
 
 import { Address } from '@turbo-eth/core-wagmi'
 import { ethers } from 'ethers'
+import Image from 'next/image'
 import { useEnsName } from 'wagmi'
 
 import { useMintableErc721SnapGet } from '@/lib/blockchain'
@@ -35,7 +36,8 @@ export default function GalleryItem({ snap }: GalleryItemProps) {
       {snapDetails ? (
         <div className="card flex flex-col items-center">
           <h2 className="text-gradient-sand my-2 text-3xl font-bold">{snapDetails.name}</h2>
-          <img src={GATEWAY_BASE + snapDetails.image.replace('ipfs://', '')} alt="Minting Snap Image" width={600} />
+          <Image src={GATEWAY_BASE + snapDetails.image.replace('ipfs://', '')} alt="Minting Snap Image" width={600} height={600} />
+          {/* <img src={GATEWAY_BASE + snapDetails.image.replace('ipfs://', '')} alt="Minting Snap Image" width={600} /> */}
           <h3 className="my-2 text-xl font-bold">{snapDetails.description}</h3>
           <div className="my-2">
             <span className="font-bold">by </span>

@@ -4,6 +4,7 @@ import { useState } from 'react'
 
 import { ethers } from 'ethers'
 import { create } from 'ipfs-http-client'
+import Image from 'next/image'
 import { useForm } from 'react-hook-form'
 import { useAccount, useWaitForTransaction } from 'wagmi'
 
@@ -234,7 +235,8 @@ export default function CreateForm() {
       </form>
       {fileIpfsHash && (
         <div className="card mt-2 flex items-center justify-center">
-          <img src={GATEWAY_BASE + fileIpfsHash} width={600} alt="story image upload" />
+          <Image src={GATEWAY_BASE + fileIpfsHash} width={600} height={600} alt="story image upload" />
+          {/* <img src={GATEWAY_BASE + fileIpfsHash} width={600} alt="story image upload" /> */}
         </div>
       )}
     </div>

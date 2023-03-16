@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['avatars.githubusercontent.com', 'images.unsplash.com'],
+    domains: ['avatars.githubusercontent.com', 'images.unsplash.com', 'nft-snaps.infura-ipfs.io'],
   },
   swcMinify: true,
   env: {
