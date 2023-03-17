@@ -54,6 +54,11 @@ export function Header(props: Props) {
           </LinkComponent>
           <div className="-mr-2 flex grow justify-end gap-4">
             <WalletConnect />
+            <LinkComponent className="mb-2 flex items-center" href="/collected">
+              <button className="btn btn-pill bg-gradient-button-green">
+                <span className="px-2">Collected</span>
+              </button>
+            </LinkComponent>
             <LinkComponent className="flex items-center" href="/create">
               <button className="btn btn-pill bg-gradient-button">
                 <span className="px-2">Create</span>
