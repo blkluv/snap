@@ -7,6 +7,7 @@ import { WalletConnect } from '@/components/blockchain/wallet-connect'
 import { siteConfig } from '@/config/site'
 import useScroll from '@/lib/hooks/use-scroll'
 
+import Dropdown from './dropdown'
 import { BranchColorMode } from '../shared/branch-color-mode'
 import { LinkComponent } from '../shared/link-component'
 import { ResponsiveMobileAndDesktop } from '../shared/responsive-mobile-and-desktop'
@@ -31,29 +32,37 @@ export function Header(props: Props) {
   return (
     <header className={classes}>
       <ResponsiveMobileAndDesktop>
-        <LinkComponent href="/" className="flex min-w-[32px] flex-1 items-center">
-          <BranchColorMode>
-            <Image alt="Logo" src="/logo-dark.png" width={32} height={32} />
-            <Image alt="Logo" src="/logo-white.png" width={32} height={32} />
-          </BranchColorMode>
-        </LinkComponent>
-        <LinkComponent className="flex items-center" href="/">
-          <BranchColorMode>
-            <Image alt="Logo" src="/logo-dark.png" width={32} height={32} />
-            <Image alt="Logo" src="/logo-white.png" width={32} height={32} />
-          </BranchColorMode>
-          <h1 className="text-gradient-sand ml-2 text-2xl font-bold">{siteConfig.name}</h1>
-        </LinkComponent>
+        <>
+          <LinkComponent href="/" className="flex min-w-[32px] flex-1 items-center">
+            <BranchColorMode>
+              <Image alt="Logo" src="/logo-dark.png" width={32} height={32} />
+              <Image alt="Logo" src="/logo-white.png" width={32} height={32} />
+            </BranchColorMode>
+          </LinkComponent>
+          <div className="-mr-2 flex grow justify-end gap-4">
+            <WalletConnect />
+            <Dropdown />
+          </div>
+        </>
+        <>
+          <LinkComponent className="flex items-center" href="/">
+            <BranchColorMode>
+              <Image alt="Logo" src="/logo-dark.png" width={32} height={32} />
+              <Image alt="Logo" src="/logo-white.png" width={32} height={32} />
+            </BranchColorMode>
+            <h1 className="text-gradient-sand ml-2 text-2xl font-bold">{siteConfig.name}</h1>
+          </LinkComponent>
+          <div className="-mr-2 flex grow justify-end gap-4">
+            <WalletConnect />
+            <LinkComponent className="flex items-center" href="/create">
+              <button className="btn btn-pill bg-gradient-button">
+                <span className="px-2">Create</span>
+              </button>
+            </LinkComponent>
+            <ThemeToggle />
+          </div>
+        </>
       </ResponsiveMobileAndDesktop>
-      <div className="-mr-2 flex grow justify-end gap-4">
-        <WalletConnect />
-        <LinkComponent className="flex items-center" href="/create">
-          <button className="btn btn-pill bg-gradient-button">
-            <span className="px-2">Create</span>
-          </button>
-        </LinkComponent>
-        <ThemeToggle />
-      </div>
     </header>
   )
 }
