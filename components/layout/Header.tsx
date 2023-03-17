@@ -59,7 +59,7 @@ export function Header(props: Props) {
                 <span className="px-2">Collected</span>
               </button>
             </LinkComponent>
-            <LinkComponent className="flex items-center" href="/create">
+            <LinkComponent className="mb-2 flex items-center" href="/create">
               <button className="btn btn-pill bg-gradient-button">
                 <span className="px-2">Create</span>
               </button>
