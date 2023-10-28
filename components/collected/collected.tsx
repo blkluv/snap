@@ -20,13 +20,13 @@ export default function Collected() {
       <div className="min-w-full rounded-md bg-neutral-100 p-4 text-center dark:bg-neutral-800">
         {snaps && snaps.length > 0 ? (
           <>
-            <h3 className="mb-8 pb-2 text-3xl font-bold">Visibile Snaps You Collected</h3>
+            <h3 className="mb-8 pb-2 text-3xl font-bold">Visibile Magic You Collected</h3>
             <CollectedGrid snaps={snaps} />
           </>
         ) : (
           <>
-            <h3 className="mb-2 text-3xl font-bold">No Snaps Visible</h3>
-            <p className="text-lg font-normal">Create a new Snap!</p>
+            <h3 className="mb-2 text-3xl font-bold">No Magic Visible</h3>
+            <p className="text-lg font-normal">Create new Magic!</p>
           </>
         )}
       </div>

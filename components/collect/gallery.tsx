@@ -33,8 +33,8 @@ export default function Gallery() {
         </>
       ) : (
         <>
-          <h3 className="mb-2 text-3xl font-bold">No Snaps Available to Collect</h3>
-          <p className="text-lg font-normal">Make a Snap - Tell your story</p>
+          <h3 className="mb-2 text-3xl font-bold">No Magic Available to Collect</h3>
+          <p className="text-lg font-normal">Make magic by telling your story</p>
         </>
       )}
     </div>

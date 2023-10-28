@@ -23,8 +23,8 @@ export default function CollectedGrid({ snaps }: CollectedGridProps) {
   if (!data?.ownedNfts || data?.ownedNfts?.length === 0)
     return (
       <div className="flex flex-col justify-center">
-        <h3 className="mb-2 text-3xl font-bold">No Snaps Visible</h3>
-        <p className="text-lg font-normal">Collect a Snap!</p>
+        <h3 className="mb-2 text-3xl font-bold">No Magic Visible</h3>
+        <p className="text-lg font-normal">Collect a Magic!</p>
       </div>
     )
   return (

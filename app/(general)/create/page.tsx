@@ -38,7 +38,7 @@ export default function Home() {
               <Balancer>Make Your Story</Balancer>
             </motion.h1>
             <motion.p className="mt-6 text-center text-gray-700 dark:text-gray-200 md:text-xl" variants={FADE_DOWN_ANIMATION_VARIANTS}>
-              <Balancer className="text-2xl leading-8">Create your NFT Snap 🖼 </Balancer>
+              <Balancer className="text-2xl leading-8">Create your NFT Magic 🪄 </Balancer>
             </motion.p>
             <motion.p className="text-center text-gray-700 dark:text-gray-200 md:text-xl" variants={FADE_DOWN_ANIMATION_VARIANTS}>
               <Balancer className="text-2xl leading-8">Collectable for 24 hours 🛒</Balancer>

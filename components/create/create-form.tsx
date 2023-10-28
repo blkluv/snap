@@ -239,7 +239,7 @@ export default function CreateForm() {
           <p className="mb-2 block text-sm font-medium text-gray-900 dark:text-white">600 x 600 images work best</p>
         </div>
         <div className="flex items-center justify-center">
-          <input type="submit" className="btn bg-gradient-button btn-xl" value="Share Snap" />
+          <input type="submit" className="btn bg-gradient-button btn-xl" value="Share Your Magic" />
         </div>
       </form>
       {fileIpfsHash && (

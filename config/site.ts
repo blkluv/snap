@@ -14,17 +14,17 @@ interface SiteConfig {
   }
 }
 
-export const SITE_CANONICAL = 'https://nftsnaps.xyz'
+export const SITE_CANONICAL = 'https://magic.luvnft.com'
 
 export const siteConfig: SiteConfig = {
-  name: 'NFTSnaps',
-  title: 'NFTSnaps - Disappearing NFTs',
-  emoji: '💨',
+  name: 'Magic',
+  title: 'NFT Stories That Magically Disapear.',
+  emoji: '🪄',
   description: 'Tell your story with disappearing NFTs',
   previewImg: `${SITE_CANONICAL}/preview.png`,
   localeDefault: 'en',
   links: {
-    twitter: 'https://twitter.com/McOso_',
-    github: 'https://github.com/McOso',
+    twitter: 'https://twitter.com/luvnft',
+    github: 'https://github.com/blkluv',
   },
 }
